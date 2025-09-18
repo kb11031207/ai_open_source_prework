@@ -1,0 +1,124 @@
+/* Reset default styles and ensure full window coverage */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #000; /* Fallback background */
+}
+
+#gameCanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    cursor: crosshair; /* Game-like cursor */
+}
+
+/* Online Players Sidebar */
+#playersSidebar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    max-height: 400px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#playersSidebar h3 {
+    margin: 0 0 10px 0;
+    color: #4CAF50;
+    text-align: center;
+    font-size: 16px;
+}
+
+#playersCount {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}
+
+#playersList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.player-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.player-item.current-player {
+    background-color: rgba(76, 175, 80, 0.3);
+    border: 1px solid #4CAF50;
+}
+
+.player-name {
+    font-weight: bold;
+    color: white;
+}
+
+.player-status {
+    margin-left: auto;
+    font-size: 10px;
+    color: #4CAF50;
+}
+
+/* Minimap */
+#minimapContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 170px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+}
+
+#minimapContainer h4 {
+    margin: 0 0 8px 0;
+    color: #4CAF50;
+    text-align: center;
+    font-size: 12px;
+}
+
+#minimapCanvas {
+    display: block;
+    border: 1px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+#minimapCanvas:hover {
+    border-color: #4CAF50;
+}
